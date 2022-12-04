@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div class="container" style="padding-top: 30px;">
+            {{#each data}}
+            <div class="card mb-3" style="background-color: rgba(245, 245, 245, 0.5);">
+                <div class="row g-0">
+                    <div class="col-md-2">
+                        <img src={{images.sm}} class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <h5 class="card-title">{{name}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{biography.fullName}}</h6>
+                            <p class="card-text">
+                                <b>Occupation:</b> {{work.occupation}}<br>
+                                <b>Publisher:</b> {{biography.publisher}}<br>
+                            </p>
+                            <a href="/heroes/{{_id}}" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card-body">
+                            <p class="card-text"></p>
+                                <b>Powerstats:</b><br>
+                                {{#with powerstats}}
+                                <p style="margin-left: 30px">
+                                    Intelligence: {{intelligence}}<br>
+                                    Strength: {{strength}}<br>
+                                    Speed: {{speed}}<br>
+                                    Durability: {{durability}}<br>
+                                    Power: {{power}}<br>
+                                    Combat: {{combat}}<br>
+                                </p>
+                                {{/with}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card-body">
+                            <p class="card-text"></p>
+                                <b>Appearance:</b><br>
+                                {{#with appearance}}
+                                <p style="margin-left: 30px">
+                                    Gender: {{gender}}<br>
+                                    Race: {{race}}<br>
+                                    Height: {{height}}<br>
+                                    Weight: {{weight}}<br>
+                                    Eye Color: {{eyeColor}}<br>
+                                    Hair Color: {{hairColor}}<br>
+                                </p>
+                                {{/with}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </body>
+</html>

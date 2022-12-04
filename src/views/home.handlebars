@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div class="container" style="padding-top: 30px;">
+            <h1 style="padding-left: 10px; padding-bottom: 15px;">Welcome to the Encyclopedia of Superhero!</h1>
+            <div style="padding-left: 13px;">
+            <a class="btn btn-secondary" href="/search" role="button">Search For Hero</a>
+            </div>
+            {{> hero this}}
+            {{#with pagination}}
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{previousPage}}">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{nextPage}}">Next</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{pageCount}}">Last</a></li>
+            </ul>
+            {{/with}}
+            <br>
+        </div>
+    </body>
+</html>

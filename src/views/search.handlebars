@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container my-4">
+            <h1>Search For Hero</h1>
+            <div style="padding-bottom: 10px;">
+            <a class="btn btn-secondary" href="/heroes" role="button">All Heroes</a>
+            </div>
+            <form id="heroForm" action="/search" method="GET" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="name" class="form-label"><b>Name</b></label>
+                    <input type="text" class="form-control" name="name" id="name">
+                </div>
+                <div class="col-md-4">
+                    <label for="gender" class="form-label"><b>Gender</b></label>
+                    <select class="form-select" aria-label="gender" name="gender" id="gender">
+                        <option value="Male" selected>Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-8" style="padding-left: 78px;">
+                <label for="intelligence" class="form-label"><b>Intelligence:</b> </label>
+                <span id="rangeval1">0</span>
+                <input type="range" class="form-range" min="0" max="200" step="1" value="0"
+                        name="intelligence" id="intelligence" onInput="$('#rangeval1').html($(this).val())">
+            </div>
+            <div class="col-md-8" style="padding-left: 78px;">
+                <label for="strength" class="form-label"><b>Strength:</b> </label>
+                <span id="rangeval2">0</span>
+                <input type="range" class="form-range" min="0" max="200" step="1" value="0"
+                        name="strength" id="strength" onInput="$('#rangeval2').html($(this).val())">
+            </div>
+            <div class="col-md-8" style="padding-left: 78px;">
+                <label for="speed" class="form-label"><b>Speed:</b> </label>
+                <span id="rangeval3">0</span>
+                <input type="range" class="form-range" min="0" max="200" step="1" value="0"
+                        name="speed" id="speed" onInput="$('#rangeval3').html($(this).val())">
+            </div>
+            <div class="col-md-8" style="padding-left: 78px;">
+                <label for="durability" class="form-label"><b>Durability:</b> </label>
+                <span id="rangeval4">0</span>
+                <input type="range" class="form-range" min="0" max="200" step="1" value="0"
+                        name="durability" id="durability" onInput="$('#rangeval4').html($(this).val())">
+            </div>
+            <div class="col-md-8" style="padding-left: 78px;">
+                <label for="power" class="form-label"><b>Power:</b> </label>
+                <span id="rangeval5">0</span>
+                <input type="range" class="form-range" min="0" max="200" step="1" value="0"
+                        name="power" id="power" onInput="$('#rangeval5').html($(this).val())">
+            </div>
+            <div class="col-md-8" style="padding-left: 78px;">
+                <label for="combat" class="form-label"><b>Combat:</b> </label>
+                <span id="rangeval6">0</span>
+                <input type="range" class="form-range" min="0" max="200" step="1" value="0"
+                        name="combat" id="combat" onInput="$('#rangeval6').html($(this).val())">
+            </div>
+            <div class="col-12"  style="padding-top: 20px; padding-left: 78px;">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+            <h3 style="padding-top: 30px; padding-left: 78px;">Results</h3>
+        </div>
+        {{> hero this}}
+    </body>
+</html>
